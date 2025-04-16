@@ -8,7 +8,7 @@ all: $(PROG)
 install: $(PROG)
 	install $(PROG) $(HOME)/bin/
 
-LIBS= -lssl
+LIBS=$(shell pkg-config --cflags --libs openssl zlib)
 
 init-db: init-db.o
 
